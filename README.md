@@ -28,10 +28,10 @@ status.
 
     ```yaml
     on_success:
-      - ps: Invoke-RestMethod https://raw.githubusercontent.com/DiscordHooks/appveyor-discord-webhook/master/send.ps1 -o send.ps1
+      - ps: Invoke-RestMethod https://raw.githubusercontent.com/Warfork/appveyor-discord-webhook/master/send.ps1 -o send.ps1
       - ps: ./send.ps1 success $env:WEBHOOK_URL
     on_failure:
-      - ps: Invoke-RestMethod https://raw.githubusercontent.com/DiscordHooks/appveyor-discord-webhook/master/send.ps1 -o send.ps1
+      - ps: Invoke-RestMethod https://raw.githubusercontent.com/Warfork/appveyor-discord-webhook/master/send.ps1 -o send.ps1
       - ps: ./send.ps1 failure $env:WEBHOOK_URL
     ```
 
@@ -42,7 +42,3 @@ status.
 -  If you face any issues in the scripts (and you're sure it's not on your side),
 please consider opening an issue and I'll fix it ASAP.
 -  If you want to improve the scripts, feel free to open a pull request.
-
-### See Also
--  [Travis CI -> Discord Webhook](https://github.com/DiscordHooks/travis-ci-discord-webhook)
--  [GitLab CI -> Discord Webhook](https://github.com/DiscordHooks/gitlab-ci-discord-webhook)
