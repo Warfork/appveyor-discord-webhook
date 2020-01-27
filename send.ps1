@@ -7,7 +7,6 @@ $WEBHOOK_URL=$args[1]
 if (!$WEBHOOK_URL) {
   Write-Output "WARNING!!"
   Write-Output "You need to pass the WEBHOOK_URL environment variable as the second argument to this script."
-  Write-Output "For details & guide, visit: https://github.com/DiscordHooks/appveyor-discord-webhook"
   Exit
 }
 
@@ -29,7 +28,7 @@ Switch ($STATUS) {
     Break
   }
 }
-$AVATAR="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Appveyor_logo.svg/256px-Appveyor_logo.svg.png"
+$AVATAR="https://warfork.com/images/Appveyor_logo.svg.png"
 
 if (!$env:APPVEYOR_REPO_COMMIT) {
   $env:APPVEYOR_REPO_COMMIT="$(git log -1 --pretty="%H")"
@@ -87,7 +86,7 @@ $WEBHOOK_DATA="{
 }"
 
 Invoke-RestMethod -Uri "$WEBHOOK_URL" -Method "POST" -UserAgent "AppVeyor-Webhook" `
-  -ContentType "application/json" -Header @{"X-Author"="k3rn31p4nic#8383"} `
+  -ContentType "application/json" -Header @{"X-Author"="caine#4092"} `
   -Body $WEBHOOK_DATA
 
 Write-Output "[Webhook]: Successfully sent the webhook."
